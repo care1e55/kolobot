@@ -14,7 +14,7 @@ INFO = f"""
 *ATA* is a admin panel and tools for automation
 
 
-- 1_👩🏾‍🚀️️ **Ilona** is your copilot assistant \n
+- 🚀️️ *Kolbot** is your copilot assistant \n
 - 🔮 **Index** is an intent manager admin \n
 """
 

@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  kolobot-ui:
+    build: .
+    image: kolobot-ui
+    container_name: kolobot-ui
+    ports:
+      - "8501:8501"
+    depends_on:
+      - chroma
+    command: make ui
+  kolobot-api:
+    build: .
+    image: kolobot-api
+    container_name: kolobot-api
+    ports:
+      - "8040:8040"
+    depends_on:
+      - chroma
+    command: make api
+  chroma:
+    image: chromadb/chroma:latest
+    environment:
+      - IS_PERSISTENT=TRUE
+    volumes:
+      - chroma-data:/chroma/chroma/
+    ports:
+      - "8000:8000"
+volumes:
+  chroma-data:
+    driver: local

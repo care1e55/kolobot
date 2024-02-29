@@ -10,7 +10,7 @@ import streamlit as st
 
 def rag_page():
     intent_store, rag, embedder = get_intent_store(), get_rag(), get_embedder()
-    st.title("👩🏾‍🚀️️ Ilona")
+    st.title("‍🚀️️ kolobot")
     st.subheader("🔮 Query:\n")
     query = st.text_input("Query", value=DEFAULT_TITLE)
     submitted = st.button("🎱 Answer")

@@ -6,12 +6,13 @@ import chromadb
 import numpy as np
 from chromadb.utils import embedding_functions
 from chromadb.api.types import QueryResult
+from chromadb.config import Settings
 
 from pydantic_settings import BaseSettings
 
 
 class IntentStoreSettings(BaseSettings):
-    data: str = "/home/care1e55/code/arxiv-rag/resources/arxiv.json"
+    data: str
     model: str = 'sentence-transformers/all-mpnet-base-v2'
 
     class Config:
@@ -63,7 +64,7 @@ class IntentStore:
         self.settings = IntentStoreSettings()
         self.intents: Dict[str: Intent] = {}
         self.intents_names: Dict[str: Intent] = {}
-        self._chroma_client = chromadb.PersistentClient('intent_store')
+        self._chroma_client = chromadb.HttpClient('chroma', '8000', settings=Settings(allow_reset=True, anonymized_telemetry=False))
         self._chroma_collection = self._chroma_client.get_or_create_collection(
             name='intent_store',
             embedding_function=embedding_functions.SentenceTransformerEmbeddingFunction(
@@ -107,7 +108,8 @@ class IntentStore:
         if result["distances"]:
             distances = np.asarray(result["distances"][0])
             intent_ids = [i["intent_id"] for i in result["metadatas"][0]]
-            distances = distances / distances.max()
+            if distances:
+                distances = distances / distances.max()
         return intent_ids, distances
 
     def describe(self, embeddings=False):

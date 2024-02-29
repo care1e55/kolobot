@@ -14,9 +14,6 @@ logger = logging.getLogger(__name__)
 
 class SentenceTransformerSettings(BaseSettings):
     embedding_dim: int = 768
-    epochs: int = 5
-    steps_per_epoch: int = 100
-    warmup_steps: int = 10
     device: str = "cpu"
 
     class Config:
