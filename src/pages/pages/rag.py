@@ -1,5 +1,6 @@
 from src.Welcome import get_intent_store
 from src.app.embedder import get_embedder
+from src.app.rag import get_chunk_rag as get_rag
 from src.const import DEFAULT_QUERY
 from src.store.chunk import ChunkIntent
 from sentence_transformers import util
