@@ -30,7 +30,7 @@ api:
 	uvicorn src.api:app --port 8040 --host '0.0.0.0'
 
 ui:
-	nohup streamlit run src/Welcome.py &
+	streamlit run src/Welcome.py
 
 build: ## Build image
 	docker-compose build --build-arg PYPI_USER=${PYPI_USER} --build-arg PYPI_PASSWORD=${PYPI_PASSWORD} --build-arg INSTALL_DEPS_DEV=${INSTALL_DEPS_DEV}

@@ -11,11 +11,10 @@ _logo, _name = "🕹", "Admin Tools for Automation"
 
 
 INFO = f"""
-*ATA* is a admin panel and tools for automation
 
-
-- 🚀️️ *Kolbot** is your copilot assistant \n
-- 🔮 **Index** is an intent manager admin \n
+- 🚀️️ *kolbot** is your copilot assistant \n
+- 🔮 **index** is an intent manager admin \n
+- 👩‍🚀 **chat** is a dialog demo \n
 """
 
 
