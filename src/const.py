@@ -9,12 +9,16 @@ DEFAULT_CONTENT = """
 DEFAULT_TEXT = """
 """
 
-MAIN_CONTENT_TEMPLATE = """Write the paragraph related to the QUERY and the TEXT provided
+HEADER = """Write the paragraph related to the QUERY and the TEXT provided
 
 Write no more than 250 words
 Use only plain text, no figures or tables
 Please be short, coherent, concise
 Please write as one paragraph without title
+"""
+
+
+MAIN_CONTENT_TEMPLATE = HEADER + """
 
 QUERY: {query}
 TEXT: {docs}

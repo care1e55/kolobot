@@ -5,7 +5,7 @@ import streamlit as st
 from pydantic_settings import BaseSettings
 
 from src.app.ner import get_ner
-from src.const import MAIN_CONTENT_TEMPLATE
+from src.const import HEADER
 
 
 class DialogSettings(BaseSettings):
@@ -18,7 +18,7 @@ class DialogSettings(BaseSettings):
 
 class Dialog:
 
-    header_prompt = f"{MAIN_CONTENT_TEMPLATE}\n"
+    header_prompt = f"{HEADER}\n"
 
     def __init__(self):
         self.settings = DialogSettings()
