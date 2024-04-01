@@ -6,25 +6,26 @@ authors = ["care1e55"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.11.6"
+python = "3.8.18"
 pydantic = "2.4.2"
 pydantic-settings = "2.0.3"
-torch = { url = "https://download.pytorch.org/whl/cpu-cxx11-abi/torch-2.0.0%2Bcpu.cxx11.abi-cp311-cp311-linux_x86_64.whl" } # CPU
-#torch = {url = "https://download.pytorch.org/whl/cu121/torch-2.1.0%2Bcu121-cp311-cp311-linux_x86_64.whl"} # GPU
-transformers = "^4.34.1"
+
 streamlit = "^1.27.2"
+
+#torch = { url = "https://download.pytorch.org/whl/cpu-cxx11-abi/torch-2.0.0%2Bcpu.cxx11.abi-cp38-cp38-linux_x86_64.whl" } # CPU
+torch = {url = "https://download.pytorch.org/whl/cu121/torch-2.1.0%2Bcu121-cp38-cp38-linux_x86_64.whl"} # GPU
+
+transformers = "^4.34.1"
 sentence-transformers = "2.2.2"
 chromadb = "0.4.22"
-langchain = "0.0.331"
-openai = "0.28.1"
-mkl = "2024.0.0"
-faiss-cpu = "1.7.4"
-bokeh = "2.4.3"
-jsonlines = "4.0.0"
-arxiv = "2.1.0"
-pypdf = "4.0.1"
-fastapi = "0.109.0"
+
+langchain = "0.1.11"
+langchain-community = "0.0.25"
+
+openai = "1.13.3"
 tiktoken = "0.5.2"
+
+fastapi = "0.109.0"
 
 pandas = "2.0.3"
 jupyter = "1.0.0"
